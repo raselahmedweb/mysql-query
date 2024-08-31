@@ -161,17 +161,42 @@
     - **Output**.  
        just imagine we have 8 students and all of them from bangladesh. because of using DISTINCT its will show us Bangladesgh only one time.
       | Country |  
-       | ---- |  
-       | Bangladesh |
+      | ---- |  
+      | Bangladesh |
 
-.16 Use ORDER BY to sort name.  
+16. Use ORDER BY to sort Name.  
     ```sh
-    SELECT Name FROM students ORDER BY Name;
+    SELECT Name, GPA FROM students ORDER BY GPA;
     ```
      - **Output**.  
-       | Name |  
-       | ---- |  
-       | Rasel |
-       | Shibli |
-       | Sohag |
-       | Sujon |
+       | Name | GPA | 
+       | ---- | ---- |  
+       | Sohag | 4.20 |
+       | Shibli | 4.30 |
+       | Sujon | 4.35 |
+       | Rasel | 4.35 |   
+
+17. Use ORDER BY to sort Name Descending.
+    ```sh
+    SELECT Name, GPA FROM students ORDER BY GPA DESC;
+    ```
+     - **Output**.  
+       | Name | GPA | 
+       | ---- | ---- |  
+       | Rasel | 4.35 |
+       | Sujon | 4.35 |
+       | Shibli | 4.30 |
+       | Sohag | 4.20 |
+       
+# We will learn now to find value using arithmatc, comparison and logical operators.
+
+18. We want to see * record where GPA 4.35  
+    ```sh
+    SELECT * FROM students
+    WHERE GPA = 4.35;
+    ```
+    - **Output**.  
+      | Roll | Name   | Gender | Age | GPA  |
+      | ---- | ------ | ------ | --- | ---- |
+      | 101  | Rasel  | Male   | 22  | 4.35 |
+      | 103  | Sujon  | Male   | 22  | 4.35 |
