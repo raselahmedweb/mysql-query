@@ -155,52 +155,58 @@
 
 15. Using SELECT DISTINCT command to get data.  
     Suppose we have a new column or key name Country. Its define our students coming from which country. So definetly will be a lot of country and sometimes from same country so many students are coming. And we wants to know how many countries students arte coming here. So if we select Country key as normal its will print all students countryname but we dont want a country name in more than one time to execute. For this we will use DISTINCT with SELECT commands.
+
     ```sh
     SELECT DISTINCT Country FROM students;
     ```
+
     - **Output**.  
        just imagine we have 8 students and all of them from bangladesh. because of using DISTINCT its will show us Bangladesgh only one time.
       | Country |  
       | ---- |  
       | Bangladesh |
 
-16. Use ORDER BY to sort Name.  
+16. Use ORDER BY to sort Name.
+
     ```sh
     SELECT Name, GPA FROM students ORDER BY GPA;
     ```
-     - **Output**.  
-       | Name | GPA | 
-       | ---- | ---- |  
-       | Sohag | 4.20 |
-       | Shibli | 4.30 |
-       | Sujon | 4.35 |
-       | Rasel | 4.35 |   
+
+    - **Output**.  
+      | Name | GPA |
+      | ---- | ---- |  
+      | Sohag | 4.20 |
+      | Shibli | 4.30 |
+      | Sujon | 4.35 |
+      | Rasel | 4.35 |
 
 17. Use ORDER BY to sort Name Descending.
     ```sh
     SELECT Name, GPA FROM students ORDER BY GPA DESC;
     ```
-     - **Output**.  
-       | Name | GPA | 
-       | ---- | ---- |  
-       | Rasel | 4.35 |
-       | Sujon | 4.35 |
-       | Shibli | 4.30 |
-       | Sohag | 4.20 |
-       
+    - **Output**.  
+      | Name | GPA |
+      | ---- | ---- |  
+      | Rasel | 4.35 |
+      | Sujon | 4.35 |
+      | Shibli | 4.30 |
+      | Sohag | 4.20 |
+
 # We will learn now to find value using arithmatc, comparison and logical operators.
 
-18. We want to see * record where GPA 4.35  
+18. We want to see \* record where GPA 4.35
     ```sh
     SELECT * FROM students
     WHERE GPA = 4.35;
     ```
     - **Output**.  
-      | Roll | Name   | Gender | Age | GPA  |
+      | Roll | Name | Gender | Age | GPA |
       | ---- | ------ | ------ | --- | ---- |
-      | 101  | Rasel  | Male   | 22  | 4.35 |
-      | 103  | Sujon  | Male   | 22  | 4.35 |
+      | 101 | Rasel | Male | 22 | 4.35 |
+      | 103 | Sujon | Male | 22 | 4.35 |
+
 # Create a new table.
+
 ```sh
 CREATE TABLE employee
 (
@@ -214,10 +220,11 @@ CREATE TABLE employee
    PRIMARY KEY(Id)
 )
 ```
+
 - **Output**
 
-| Id | Name | Department | Position | Gender | Age | Address |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Id  | Name | Department | Position | Gender | Age | Address |
+| --- | ---- | ---------- | -------- | ------ | --- | ------- |
 
 ```sh
    INSERT INTO employee
@@ -232,59 +239,138 @@ CREATE TABLE employee
    (9, 'Emily Johnson', 'Sales', 'Sales Executive', 'Female', 30, 'UK'),
    (10, 'Ahmed Ali', 'IT', 'System Administrator', 'Male', 28, 'India');
 ```
+
 - **Output**
 
-| Id | Name | Department | Position | Gender | Age | Address |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 1 | Anisul Islam | IT | Full Stack Developer | Male | 31 | Finland | 
-| 2 | Sohel Rana | Marketing | Manager | Male | 35 | Saudi Arabia | 
-| 3 | Raihan | Coffee | Barista | Male | 27 | Saudi Arabia | 
-| 4 | Srijita | Reciption | Reciptionist | Female | 24 | Saudi Arabia | 
-| 5 | Anamol | F and B | Supervisor | Male | 31 | UAE | 
-| 6 | Abu Ahmed | Marketing | Manager | Male | 33 | Saudi Arabia | 
-| 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
-| 8 | John Smith | Finance | Accountant | Male | 45 | USA | 
-| 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK | 
-| 10 | Ahmed Ali | IT | System Administrator | Male | 28 | India | 
-
+| Id  | Name          | Department | Position             | Gender | Age | Address      |
+| --- | ------------- | ---------- | -------------------- | ------ | --- | ------------ |
+| 1   | Anisul Islam  | IT         | Full Stack Developer | Male   | 31  | Finland      |
+| 2   | Sohel Rana    | Marketing  | Manager              | Male   | 35  | Saudi Arabia |
+| 3   | Raihan        | Coffee     | Barista              | Male   | 27  | Saudi Arabia |
+| 4   | Srijita       | Reciption  | Reciptionist         | Female | 24  | Saudi Arabia |
+| 5   | Anamol        | F and B    | Supervisor           | Male   | 31  | UAE          |
+| 6   | Abu Ahmed     | Marketing  | Manager              | Male   | 33  | Saudi Arabia |
+| 7   | Fatima Noor   | HR         | HR Manager           | Female | 29  | UAE          |
+| 8   | John Smith    | Finance    | Accountant           | Male   | 45  | USA          |
+| 9   | Emily Johnson | Sales      | Sales Executive      | Female | 30  | UK           |
+| 10  | Ahmed Ali     | IT         | System Administrator | Male   | 28  | India        |
 
 ## Now practice query based on this new table data
+
 19. Select data by Logical Operators.
-   ```sh
-   SELECT * FROM employee WHERE Id > 6;
-   ```
-   - **Output**
 
-   | Id | Name | Department | Position | Gender | Age | Address |
-   | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-   | 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
-   | 8 | John Smith | Finance | Accountant | Male | 45 | USA | 
-   | 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK | 
-   | 10 | Ahmed Ali | IT | System Administrator | Male | 28 |    India | 
+```sh
+SELECT * FROM employee WHERE Id > 6;
+```
 
+- **Output**
+
+| Id  | Name          | Department | Position             | Gender | Age | Address |
+| --- | ------------- | ---------- | -------------------- | ------ | --- | ------- |
+| 7   | Fatima Noor   | HR         | HR Manager           | Female | 29  | UAE     |
+| 8   | John Smith    | Finance    | Accountant           | Male   | 45  | USA     |
+| 9   | Emily Johnson | Sales      | Sales Executive      | Female | 30  | UK      |
+| 10  | Ahmed Ali     | IT         | System Administrator | Male   | 28  | India   |
 
 20. Use two condition AND operators.
 
-   ```sh
-   SELECT * FROM employee WHERE Id > 6 AND Gender = 'Female';
-   ```
-   - **Output**
+```sh
+SELECT * FROM employee WHERE Id > 6 AND Gender = 'Female';
+```
 
-   | Id | Name | Department | Position | Gender | Age | Address |
-   | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-   | 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
-   | 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK |
+- **Output**
+
+| Id  | Name          | Department | Position        | Gender | Age | Address |
+| --- | ------------- | ---------- | --------------- | ------ | --- | ------- |
+| 7   | Fatima Noor   | HR         | HR Manager      | Female | 29  | UAE     |
+| 9   | Emily Johnson | Sales      | Sales Executive | Female | 30  | UK      |
 
 21. Use of LIKE operators.
 
-   ```sh
-   SELECT Name, Age, Address FROM employee WHERE Age >= 30 AND Name LIKE 'A%';
-   ```
+```sh
+SELECT Name, Age, Address FROM employee WHERE Age >= 30 AND Name LIKE 'A%';
+```
 
-   - **Output**
+- **Output**
 
-   | Name | Age | Address |
-   | ---- | ---- | ---- |
-   | Anisul Islam | 31 | Finland |
-   | Anamol | 31 | UAE |
-   | Abu Ahmed | 33 | Saudi Arabia |
+| Name         | Age | Address      |
+| ------------ | --- | ------------ |
+| Anisul Islam | 31  | Finland      |
+| Anamol       | 31  | UAE          |
+| Abu Ahmed    | 33  | Saudi Arabia |
+
+22. Use of AS keyword.
+
+```sh
+SELECT Id AS Roll, Name AS 'First Name' FROM employee WHERE Id < 5;
+```
+
+- **Output**
+
+| Roll | First Name   |
+| ---- | ------------ |
+| 1    | Anisul Islam |
+| 2    | Sohel Rana   |
+| 3    | Raihan       |
+| 4    | Srijita      |
+
+# Create SQL Constraints
+
+- **NOT NULL**
+
+```sh
+CREATE TABLE Users (
+ ID INT NOT NULL,
+ Name VARCHAR(100) NOT NULL
+);
+```
+
+- **UNIQUE**
+
+```sh
+CREATE TABLE Users (
+    ID INT UNIQUE,
+    Email VARCHAR(100) UNIQUE
+);
+```
+
+- **PRIMARY KEY = NOT NALL + UNIQUE**
+
+```sh
+CREATE TABLE Users (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(100)
+);
+```
+
+- **FOREIGN KEY**
+
+```sh
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES Users(ID)
+);
+```
+
+- **CHECK**
+
+```sh
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    Price DECIMAL(10, 2),
+    CHECK (Price > 0)
+);
+```
+
+- **DEFAULT**
+
+```sh
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Salary DECIMAL(10, 2) DEFAULT 50000
+);
+```
+
+
+Next UPDATE STATEMENT to learn
