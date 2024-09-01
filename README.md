@@ -372,5 +372,60 @@ CREATE TABLE Employees (
 );
 ```
 
+23. Use UPDATE SET to update the records.
 
-Next UPDATE STATEMENT to learn
+```sh
+UPDATE employee SET Address = 'Bangladesh' WHERE Id = 10;
+```
+
+- **Output**
+
+| Id  | Name          | Department | Position             | Gender | Age | Address |
+| --- | ------------- | ---------- | -------------------- | ------ | --- | ------- |
+| 7   | Fatima Noor   | HR         | HR Manager           | Female | 29  | UAE     |
+| 8   | John Smith    | Finance    | Accountant           | Male   | 45  | USA     |
+| 9   | Emily Johnson | Sales      | Sales Executive      | Female | 30  | UK      |
+| 10  | Ahmed Ali     | IT         | System Administrator | Male   | 28  | Bangladesh* |
+
+
+# Use of some function in query.
+
+   - **UPPER()**
+   - **LOWER()**
+   - **CONCAT()**
+   - **POW()**
+   - **GREATEST()**
+   - **LEAST()**
+   - **LOG()**
+   - **LOG10()**
+   - **EXP()**
+   - **RAND()**
+
+24. example
+
+```sh
+SELECT CONCAT(Name, ' is ', Age, ' year old') FROM employee WHERE Id = 8;
+```
+   - **Output**  
+      CONCAT(Name, ' is ', Age, ' year old')  
+      John Smith is 45 year old
+
+# Aggregate functions
+   - **COUNT()**
+   - **SUM()**
+   - **AVG()**
+   - **MIN()**
+   - **MAX()**
+
+25. example.
+
+```sh
+SELECT SUM(Id) AS 'Sum of Id', AVG(Id) AS 'Avarage of Id' FROM employee;
+```
+- **Output**
+
+| Sum of Id | Avarage of Id |
+| ----- | ------- |
+| 55 | 5.5000 |
+
+# next to learn SUB QUERY
