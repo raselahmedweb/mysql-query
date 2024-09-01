@@ -200,3 +200,77 @@
       | ---- | ------ | ------ | --- | ---- |
       | 101  | Rasel  | Male   | 22  | 4.35 |
       | 103  | Sujon  | Male   | 22  | 4.35 |
+# Create a new table.
+```sh
+CREATE TABLE emploee
+(
+   Id int(5),
+   Name varchar(20),
+   Department varchar(30),
+   Position varchar(30),
+   Gender varchar(10),
+   Age int(3),
+   Address varchar(15),
+   PRIMARY KEY(Id)
+)
+```
+- **Output**
+
+| Id | Name | Department | Position | Gender | Age | Address |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+
+```sh
+   INSERT INTO emploee
+   VALUES (1, 'Anisul Islam', 'IT', 'Full Stack Developer', 'Male', 31, 'Finland'),
+   (2, 'Sohel Rana', 'Marketing', 'Manager', 'Male', 35, 'Saudi Arabiya'),
+   (3, 'Raihan', 'Coffee', 'Barista', 'Male', 27, 'Saudi Arabiya'),
+   (4, 'Srijita', 'Reciption', 'Reciptionist', 'Female', 24, 'Saudi Arabiya'),
+   (5, 'Anamol', 'F and b', 'Supervisor', 'Male', 31, 'UAE'),
+   (6, 'Abu Ahmed', 'Marketing', 'Manager', 'Male', 33, 'Saudi Arabiya'),
+    (7, 'Fatima Noor', 'HR', 'HR Manager', 'Female', 29, 'UAE'),
+   (8, 'John Smith', 'Finance', 'Accountant', 'Male', 45, 'USA'),
+   (9, 'Emily Johnson', 'Sales', 'Sales Executive', 'Female', 30, 'UK'),
+   (10, 'Ahmed Ali', 'IT', 'System Administrator', 'Male', 28, 'India');
+```
+- **Output**
+
+| Id | Name | Department | Position | Gender | Age | Address |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 1 | Anisul Islam | IT | Full Stack Developer | Male | 31 | Finland | 
+| 2 | Sohel Rana | Marketing | Manager | Male | 35 | Saudi Arabia | 
+| 3 | Raihan | Coffee | Barista | Male | 27 | Saudi Arabia | 
+| 4 | Srijita | Reciption | Reciptionist | Female | 24 | Saudi Arabia | 
+| 5 | Anamol | F and B | Supervisor | Male | 31 | UAE | 
+| 6 | Abu Ahmed | Marketing | Manager | Male | 33 | Saudi Arabia | 
+| 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
+| 8 | John Smith | Finance | Accountant | Male | 45 | USA | 
+| 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK | 
+| 10 | Ahmed Ali | IT | System Administrator | Male | 28 | India | 
+
+
+## Now practice query based on this new table data
+19. Select data by Logical Operators.
+   ```sh
+   SELECT * FROM emploee WHERE Id > 6;
+   ```
+   - **Output**
+
+   | Id | Name | Department | Position | Gender | Age | Address |
+   | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+   | 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
+   | 8 | John Smith | Finance | Accountant | Male | 45 | USA | 
+   | 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK | 
+   | 10 | Ahmed Ali | IT | System Administrator | Male | 28 |    India | 
+
+
+20. Use two condition AND operators.
+
+   ```sh
+   SELECT * FROM emploee WHERE Id > 6 AND Gender = 'Female';
+   ```
+   - **Output**
+
+   | Id | Name | Department | Position | Gender | Age | Address |
+   | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+   | 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
+   | 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK | 
