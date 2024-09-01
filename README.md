@@ -202,7 +202,7 @@
       | 103  | Sujon  | Male   | 22  | 4.35 |
 # Create a new table.
 ```sh
-CREATE TABLE emploee
+CREATE TABLE employee
 (
    Id int(5),
    Name varchar(20),
@@ -220,7 +220,7 @@ CREATE TABLE emploee
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 
 ```sh
-   INSERT INTO emploee
+   INSERT INTO employee
    VALUES (1, 'Anisul Islam', 'IT', 'Full Stack Developer', 'Male', 31, 'Finland'),
    (2, 'Sohel Rana', 'Marketing', 'Manager', 'Male', 35, 'Saudi Arabiya'),
    (3, 'Raihan', 'Coffee', 'Barista', 'Male', 27, 'Saudi Arabiya'),
@@ -251,7 +251,7 @@ CREATE TABLE emploee
 ## Now practice query based on this new table data
 19. Select data by Logical Operators.
    ```sh
-   SELECT * FROM emploee WHERE Id > 6;
+   SELECT * FROM employee WHERE Id > 6;
    ```
    - **Output**
 
@@ -266,11 +266,25 @@ CREATE TABLE emploee
 20. Use two condition AND operators.
 
    ```sh
-   SELECT * FROM emploee WHERE Id > 6 AND Gender = 'Female';
+   SELECT * FROM employee WHERE Id > 6 AND Gender = 'Female';
    ```
    - **Output**
 
    | Id | Name | Department | Position | Gender | Age | Address |
    | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
    | 7 | Fatima Noor | HR | HR Manager | Female | 29 | UAE | 
-   | 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK | 
+   | 9 | Emily Johnson | Sales | Sales Executive | Female | 30 | UK |
+
+21. Use of LIKE operators.
+
+   ```sh
+   SELECT Name, Age, Address FROM employee WHERE Age >= 30 AND Name LIKE 'A%';
+   ```
+
+   - **Output**
+
+   | Name | Age | Address |
+   | ---- | ---- | ---- |
+   | Anisul Islam | 31 | Finland |
+   | Anamol | 31 | UAE |
+   | Abu Ahmed | 33 | Saudi Arabia |
