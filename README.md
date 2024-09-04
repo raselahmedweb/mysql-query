@@ -452,4 +452,37 @@ SELECT Department, SUM(Salery) FROM employee GROUP BY Department;
 ```
 
 
-# next TRUNCATE TABLE commands
+30. use TRUNCATE TABLE to remove all data or records from the table
+```sh
+TRUNCATE TABLE employee;
+```
+
+31. Join Table to get data from multiple tables
+```sh
+SELECT employee.ID, Name, Gender, Department, Salery, Location, Budget, EstablishedYear FROM department, employee WHERE employee.ID = department.ID;
+```
+alternatively here also we can use JOIN instead of coma and ON instead of WHERE;
+
+```sh
+SELECT employee.ID, Name, Gender, Department, Salery, Location, Budget, EstablishedYear FROM department JOIN employee ON employee.ID = department.ID;
+```
+also LEFT JOIN and RIGHT JOIN can be use.
+
+32. UNION and UNION ALL
+To use this syntex we have to make sure that we are taking same column and same sequence order.
+
+```sh
+SELECT Name, Gender, TourPlace From student_one
+UNION
+SELECT Name, Gender, TourPlace From student_two;
+```
+here its will not show us duplicate value. to see the duplicate value we can use UNION ALL instead of UNION.
+
+33. creating virtual table.
+
+```sh
+CREATE VIEW employee_views AS SELECT ID, Name, Gender FROM employee;
+```
+34. then we can use date related some functions.
+
+
