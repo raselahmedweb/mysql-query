@@ -428,4 +428,28 @@ SELECT SUM(Id) AS 'Sum of Id', AVG(Id) AS 'Avarage of Id' FROM employee;
 | ----- | ------- |
 | 55 | 5.5000 |
 
-# next to learn SUB QUERY
+# ALTER TABLE 
+### ALTER TABLE command is used for
+   - **to add new column in the table**
+   - **to change the name of column**
+   - **to delete the column**
+26. ADD column syntax
+```sh
+ALTER TABLE employee ADD Salery int(7);
+```
+27. Rename column
+```sh
+ALTER TABLE employee CHANGE Salery Salery_per int(7);
+```
+28. Delete column
+```sh
+ALTER TABLE employee DROP TABLE Salery;
+```
+
+29. GRUOP BY CLAUSE
+```sh
+SELECT Department, SUM(Salery) FROM employee GROUP BY Department;
+```
+
+
+# next TRUNCATE TABLE commands
